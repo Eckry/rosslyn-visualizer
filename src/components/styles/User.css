@@ -1,0 +1,18 @@
+.problems-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.problem {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid red;
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+  padding: 7px;
+  gap: 1rem;
+}

@@ -1,10 +1,11 @@
 import "./App.css";
+import User from "./components/User";
 
 function App() {
   return (
-    <>
-      <h1>hello</h1>
-    </>
+    <main className="main-container">
+      <User />
+    </main>
   );
 }
 
