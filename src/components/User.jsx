@@ -1,11 +1,14 @@
+import { useParams } from "react-router-dom";
 import useUser from "../hooks/useUser";
+import { Link } from "react-router-dom";
 import "./styles/User.css"
 
 export default function User() {
-  const [data] = useUser("KyhosCrusher");
+  const {user} = useParams();
+  const [data] = useUser(user);
   return (
-    <>
-      <h1>KyhosCrusher</h1>
+    <main className="users-container">
+      <h1>{user}</h1>
       <ul className="problems-container">
         {data.map((problem) => {
           return (
@@ -22,6 +25,8 @@ export default function User() {
         })}
       </ul>
       <h4>Total: {data.length}</h4>
-    </>
+
+      <Link className="go-back" to={"/"}>Go back</Link>
+    </main>
   );
 }
