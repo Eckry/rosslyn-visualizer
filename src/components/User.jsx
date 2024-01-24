@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import React from "react";
 import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
@@ -21,6 +22,10 @@ export default function User() {
     );
   }
 
+  const dynamicStyleRating = (rating, max) => {
+    return { color: rating === max ? "var(--highlight-color-two)" : "white" };
+  };
+
   return (
     <main className="users-container">
       <h1>{user}</h1>
@@ -28,14 +33,14 @@ export default function User() {
         {Object.keys(data).map((date) => {
           let counter = 0;
           return (
-            <>
+            <React.Fragment key={date}>
               <li className="week-container">
                 <h1>Semana {Number(date) + 1}</h1>
                 <div className="days-package">
                   {days.map((day) => {
                     if (!data[date][day])
                       return (
-                        <div className="day-container">
+                        <div key={day} className="day-container">
                           <h4 className="day">{day}</h4>
                           <div className="problem-container">
                             <p className="not-found">
@@ -45,7 +50,7 @@ export default function User() {
                         </div>
                       );
                     return (
-                      <div className="day-container">
+                      <div key={day} className="day-container">
                         <h4 className="day">{day}</h4>
                         <div className="problem-container">
                           {data[date][day].map((problem) => {
@@ -54,7 +59,14 @@ export default function User() {
                             return (
                               <div className="problem" key={name}>
                                 <p>{name}</p>
-                                <p>{rating}</p>
+                                <p
+                                  style={dynamicStyleRating(
+                                    rating,
+                                    data[date].max
+                                  )}
+                                >
+                                  {rating}
+                                </p>
                                 <div className="tags-container">
                                   {tags.map((tag) => (
                                     <p className="tag" key={tag}>
@@ -73,7 +85,7 @@ export default function User() {
                 <h4>Total de semana: {counter}</h4>
               </li>
               <hr />
-            </>
+            </React.Fragment>
           );
         })}
       </ul>
