@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
+import { days } from "../constants.json";
 import "./styles/User.css";
 
 export default function User() {
@@ -25,21 +26,42 @@ export default function User() {
       <h1>{user}</h1>
       <ul className="problems-container">
         {Object.keys(data).map((date) => {
-          return data[date].map((problem) => {
-            const { tags, name, rating } = problem;
-            return (
-              <li className="problem" key={name}>
-                <h5>{date}</h5>
-                <p>{name}</p>
-                <p>{rating}</p>
-                <div>
-                  {tags.map((tag) => (
-                    <p key={tag}>{tag}</p>
-                  ))}
-                </div>
-              </li>
-            );
-          });
+          return (
+            <li className="week-container">
+              <h1>Week {Number(date) + 1}</h1>
+              <div>
+                {days.map((day) => {
+                  if (!data[date][day])
+                    return (
+                      <div className="day-container">
+                        <h4>{day}</h4>
+                      </div>
+                    );
+                  return (
+                    <div className="day-container">
+                      <h4>{day}</h4>
+                      <div>
+                        {data[date][day].map((problem) => {
+                          const { tags, name, rating } = problem;
+                          return (
+                            <div className="problem" key={name}>
+                              <p>{name}</p>
+                              <p>{rating}</p>
+                              <div>
+                                {tags.map((tag) => (
+                                  <p key={tag}>{tag}</p>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </li>
+          );
         })}
       </ul>
       <h4>Total: {data.length}</h4>
