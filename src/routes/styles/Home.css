@@ -1,0 +1,25 @@
+.link {
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 10px 1px var(--secondary-color);
+  padding: 1rem;
+  min-height: 600px;
+  width: 300px;
+  transition: 0.2s ease-in-out;
+  display: grid;
+  place-content: center;
+  border-radius: 1rem;
+}
+
+.link:hover ~ .link {
+  box-shadow: 0 0 10px 1px var(--secondary-darker-color);
+}
+
+.link:has(~ .link:hover) {
+  box-shadow: 0 0 10px 1px var(--secondary-darker-color);
+}
+
+.link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 1px var(--secondary-brighty-color);
+}
