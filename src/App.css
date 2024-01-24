@@ -13,6 +13,7 @@
   --secondary-darker-color: #1d1f24;
   --tertiary-color: #FFD369;
   --highlight-color: #d35100;
+  --highlight-darker-color: #3b00007e;
   --highlight-color-two: purple;
   --highlight-brighty-color-two: rgb(162, 1, 162);
 }
@@ -32,7 +33,7 @@ a {
 }
 
 hr {
-  background-color: var(--highlight-color-two);
+  background-color: var(--tertiary-color);
   height: 5px;
 }
 
