@@ -1,50 +1,12 @@
 {
-  "solved": {
-    "KyhosCrusher": {
-      "Watermelon": true,
-      "Way Too Long Words": true,
-      "Team": true,
-      "Elephant": true,
-      "Collecting Coins": true,
-      "Restoring Three Numbers": true,
-      "Vika and Her Friends": true,
-      "Domino piling": true,
-      "Next Round": true,
-      "Vanya and Fence": true,
-      "Sum": true,
-      "Anton and Polyhedrons": true,
-      "Beautiful Year": true
-    },
-    "Eckry": {
-      "Blackboard List": true,
-      "Growing game": true,
-      "Aliases": true,
-      "Bucket storing": true,
-      "New Year Transportation": true,
-      "Numbers on Whiteboard": true,
-      "Theatre Square": true,
-      "Raising Bacteria": true,
-      "Dragons": true,
-      "Coins": true,
-      "Love Story": true,
-      "JoJo's Incredible Adventures": true,
-      "Ian Visits Mary": true,
-      "Sort with Step": true,
-      "Bun Lover": true,
-      "Triangle": true,
-      "Queue at the School": true,
-      "Elephant": true,
-      "Karina and Array": true,
-      "Unnatural Language Processing": true
-    },
-    "Wyoming": {
-      "Masha and a Beautiful Tree": true,
-      "Raising Bacteria": true,
-      "Dragons": true,
-      "Marketing Scheme": true,
-      "Domino piling": true,
-      "Queue at the School": true,
-      "Elephant": true
-    }
-  }
+  "days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+  "limitDate": "January 14, 2024 00:00:00"
 }
