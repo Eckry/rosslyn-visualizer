@@ -26,9 +26,10 @@ export default function User() {
       <h1>{user}</h1>
       <ul className="problems-container">
         {Object.keys(data).map((date) => {
+          let counter = 0;
           return (
             <li className="week-container">
-              <h1>Week {Number(date) + 1}</h1>
+              <h1>Semana {Number(date) + 1}</h1>
               <div>
                 {days.map((day) => {
                   if (!data[date][day])
@@ -42,6 +43,7 @@ export default function User() {
                       <h4>{day}</h4>
                       <div>
                         {data[date][day].map((problem) => {
+                          counter++;
                           const { tags, name, rating } = problem;
                           return (
                             <div className="problem" key={name}>
@@ -60,14 +62,14 @@ export default function User() {
                   );
                 })}
               </div>
+              <h4>Total de semana: {counter}</h4>
             </li>
           );
         })}
       </ul>
-      <h4>Total: {data.length}</h4>
 
       <Link className="go-back" to={"/"}>
-        Go back
+        Volver
       </Link>
     </main>
   );
