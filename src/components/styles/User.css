@@ -99,7 +99,7 @@
   border-radius: 10px;
   font-size: 0.7rem;
   color: var(--highlight-color);
-  border: 2px solid var(--highlight-color);
+  background-color: #3b00007e;
 }
 
 @media (max-width: 1000px) {
