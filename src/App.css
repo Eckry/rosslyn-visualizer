@@ -20,6 +20,14 @@ body {
   font-family: "Victor Mono Variable", sans-serif;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .main-container {
   text-align: center;
   display: flex;
