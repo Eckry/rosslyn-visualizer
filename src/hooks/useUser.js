@@ -8,7 +8,7 @@ export default function useUser(user) {
       .then((res) => res.json())
       .then((userData) => {
         const newUserData = userData.result.reduce((userProblems, problem) => {
-          if (constants.solved.kyhoscrusher[problem.problem.name])
+          if (constants.solved[user][problem.problem.name])
             return userProblems;
           if (
             problem.verdict === "OK" &&
