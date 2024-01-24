@@ -1,11 +1,25 @@
 import { useParams } from "react-router-dom";
 import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
-import "./styles/User.css"
+import Loading from "./Loading";
+import "./styles/User.css";
 
 export default function User() {
-  const {user} = useParams();
-  const [data] = useUser(user);
+  const { user } = useParams();
+  const [data, isLoading] = useUser(user);
+
+  if (isLoading) {
+    return (
+      <main className="users-container">
+        <h1>{user}</h1>
+        <Loading />
+        <Link className="go-back" to={"/"}>
+          Go back
+        </Link>
+      </main>
+    );
+  }
+
   return (
     <main className="users-container">
       <h1>{user}</h1>
@@ -26,7 +40,9 @@ export default function User() {
       </ul>
       <h4>Total: {data.length}</h4>
 
-      <Link className="go-back" to={"/"}>Go back</Link>
+      <Link className="go-back" to={"/"}>
+        Go back
+      </Link>
     </main>
   );
 }
