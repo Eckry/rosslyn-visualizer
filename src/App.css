@@ -17,6 +17,7 @@
 body {
   min-height: 100vh;
   background-color: var(--primary-color);
+  font-family: "Victor Mono Variable", sans-serif;
 }
 
 .main-container {
