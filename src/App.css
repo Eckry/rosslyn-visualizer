@@ -7,11 +7,14 @@
 }
 
 :root {
-  --primary-color: #171616;
-  --secondary-color: #006e10;
-  --secondary-brighty-color: #00b71b;
-  --secondary-darker-color: #00480b;
-  --highlight-color: rgb(243, 199, 117);
+  --primary-color: #222831;
+  --secondary-color: #393E46;
+  --secondary-brighty-color: #687180;
+  --secondary-darker-color: #1d1f24;
+  --tertiary-color: #FFD369;
+  --highlight-color: #d35100;
+  --highlight-color-two: purple;
+  --highlight-brighty-color-two: rgb(162, 1, 162);
 }
 
 body {
@@ -26,6 +29,11 @@ li {
 
 a {
   text-decoration: none;
+}
+
+hr {
+  background-color: var(--highlight-color-two);
+  height: 5px;
 }
 
 .main-container {
