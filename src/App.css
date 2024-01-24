@@ -8,9 +8,9 @@
 
 :root {
   --primary-color: #171616;
-  --secondary-color: #5b5b5b;
-  --secondary-brighty-color: #767676;
-  --secondary-darker-color: #343434;
+  --secondary-color: #006e10;
+  --secondary-brighty-color: #00b71b;
+  --secondary-darker-color: #00480b;
   --highlight-color: rgb(243, 199, 117);
 }
 
