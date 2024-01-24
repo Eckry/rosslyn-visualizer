@@ -28,42 +28,52 @@ export default function User() {
         {Object.keys(data).map((date) => {
           let counter = 0;
           return (
-            <li className="week-container">
-              <h1>Semana {Number(date) + 1}</h1>
-              <div>
-                {days.map((day) => {
-                  if (!data[date][day])
+            <>
+              <li className="week-container">
+                <h1>Semana {Number(date) + 1}</h1>
+                <div className="days-package">
+                  {days.map((day) => {
+                    if (!data[date][day])
+                      return (
+                        <div className="day-container">
+                          <h4 className="day">{day}</h4>
+                          <div className="problem-container">
+                            <p className="not-found">
+                              No se encontraron problemas...
+                            </p>
+                          </div>
+                        </div>
+                      );
                     return (
                       <div className="day-container">
-                        <h4>{day}</h4>
+                        <h4 className="day">{day}</h4>
+                        <div className="problem-container">
+                          {data[date][day].map((problem) => {
+                            counter++;
+                            const { tags, name, rating } = problem;
+                            return (
+                              <div className="problem" key={name}>
+                                <p>{name}</p>
+                                <p>{rating}</p>
+                                <div className="tags-container">
+                                  {tags.map((tag) => (
+                                    <p className="tag" key={tag}>
+                                      {tag}
+                                    </p>
+                                  ))}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                     );
-                  return (
-                    <div className="day-container">
-                      <h4>{day}</h4>
-                      <div>
-                        {data[date][day].map((problem) => {
-                          counter++;
-                          const { tags, name, rating } = problem;
-                          return (
-                            <div className="problem" key={name}>
-                              <p>{name}</p>
-                              <p>{rating}</p>
-                              <div>
-                                {tags.map((tag) => (
-                                  <p key={tag}>{tag}</p>
-                                ))}
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <h4>Total de semana: {counter}</h4>
-            </li>
+                  })}
+                </div>
+                <h4>Total de semana: {counter}</h4>
+              </li>
+              <hr />
+            </>
           );
         })}
       </ul>
