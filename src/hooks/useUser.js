@@ -24,6 +24,10 @@ export default function useUser(user) {
             const problemYear = days[problemDate.getDay()];
             const problemWeek = getWeekOfMonth(problemDate);
             if (dates[problemWeek]) {
+              dates[problemWeek].max = Math.max(
+                dates[problemWeek].max,
+                problem.problem.rating
+              );
               if (
                 dates[problemWeek][problemYear] &&
                 !dates[problemWeek][problemYear].some(
@@ -43,7 +47,7 @@ export default function useUser(user) {
                 },
               ]);
             }
-            dates[problemWeek] = {};
+            dates[problemWeek] = { max: problem.problem.rating };
             dates[problemWeek][problemYear] = [
               {
                 name: problem.problem.name,
