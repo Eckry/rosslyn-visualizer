@@ -96,10 +96,10 @@
 
 .tag {
   padding: 7px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 0.7rem;
   color: var(--highlight-color);
-  background-color: #3b00007e;
+  background-color: var(--highlight-darker-color);
 }
 
 @media (max-width: 1000px) {
