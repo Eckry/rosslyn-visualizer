@@ -15,19 +15,33 @@
 
 .problems-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   place-content: center;
   padding: 1rem;
-  gap: 1rem;
+  gap: 2rem;
+}
+
+.week-container {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.day-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--highlight-color);
+  min-height: 120px;
 }
 
 .problem {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  box-shadow: 0 0 5px 1px var(--secondary-color);
   place-items: center;
   padding: 7px;
   gap: 1rem;
+  width: 100%;
 }
 
 .go-back {
