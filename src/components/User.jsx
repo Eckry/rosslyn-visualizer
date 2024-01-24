@@ -24,18 +24,22 @@ export default function User() {
     <main className="users-container">
       <h1>{user}</h1>
       <ul className="problems-container">
-        {data.map((problem) => {
-          return (
-            <li className="problem" key={problem.problem.name}>
-              <p>{problem.problem.name}</p>
-              <p>{problem.problem.rating}</p>
-              <div>
-                {problem.problem.tags.map((tag) => (
-                  <p key={tag}>{tag}</p>
-                ))}
-              </div>
-            </li>
-          );
+        {Object.keys(data).map((date) => {
+          return data[date].map((problem) => {
+            const { tags, name, rating } = problem;
+            return (
+              <li className="problem" key={name}>
+                <h5>{date}</h5>
+                <p>{name}</p>
+                <p>{rating}</p>
+                <div>
+                  {tags.map((tag) => (
+                    <p key={tag}>{tag}</p>
+                  ))}
+                </div>
+              </li>
+            );
+          });
         })}
       </ul>
       <h4>Total: {data.length}</h4>
