@@ -1,6 +1,7 @@
 .link {
   text-decoration: none;
   color: white;
+  background-color: var(--secondary-color);
   box-shadow: 0 0 10px 1px var(--secondary-color);
   padding: 1rem;
   min-height: 600px;
