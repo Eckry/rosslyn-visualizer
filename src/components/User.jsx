@@ -55,9 +55,14 @@ export default function User() {
                         <div className="problem-container">
                           {data[date][day].map((problem) => {
                             counter++;
-                            const { tags, name, rating } = problem;
+                            const { tags, name, rating, id, index } = problem;
                             return (
-                              <div className="problem" key={name}>
+                              <a
+                                target="_blank"
+                                href={`https://codeforces.com/problemset/problem/${id}/${index}`}
+                                className="problem"
+                                key={name}
+                              >
                                 <p className="problem-title">{name}</p>
                                 <p
                                   style={dynamicStyleRating(
@@ -74,7 +79,7 @@ export default function User() {
                                     </p>
                                   ))}
                                 </div>
-                              </div>
+                              </a>
                             );
                           })}
                         </div>
