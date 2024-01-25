@@ -58,7 +58,7 @@ export default function User() {
                             const { tags, name, rating } = problem;
                             return (
                               <div className="problem" key={name}>
-                                <p>{name}</p>
+                                <p className="problem-title">{name}</p>
                                 <p
                                   style={dynamicStyleRating(
                                     rating,
@@ -69,7 +69,7 @@ export default function User() {
                                 </p>
                                 <div className="tags-container">
                                   {tags.map((tag) => (
-                                    <p className="tag" key={tag}>
+                                    <p title={tag} className="tag" key={tag}>
                                       {tag}
                                     </p>
                                   ))}
