@@ -40,12 +40,16 @@ export default function useUser(user) {
                   name: problem.problem.name,
                   tags: problem.problem.tags, // If the date exists, then add new problem
                   rating: problem.problem.rating,
+                  id: problem.author.contestId,
+                  index: problem.problem.index,
                 });
               return (dates[problemWeek][problemYear] = [
                 {
                   name: problem.problem.name,
                   tags: problem.problem.tags, //If the date doesn't exists, add an array with the problem
                   rating: problem.problem.rating,
+                  id: problem.author.contestId,
+                  index: problem.problem.index,
                 },
               ]);
             }
@@ -55,6 +59,8 @@ export default function useUser(user) {
                 name: problem.problem.name,
                 tags: problem.problem.tags, // If the week doesn't exists, add it and add max rating as a property
                 rating: problem.problem.rating,
+                id: problem.author.contestId,
+                index: problem.problem.index,
               },
             ];
           }
