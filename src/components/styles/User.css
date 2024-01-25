@@ -36,10 +36,8 @@
 }
 
 .problem-container {
-  position: relative;
   border-radius: 1rem;
   margin-top: -14px;
-  z-index: -1;
   min-height: 150px;
   border: 2px solid var(--tertiary-color);
   background-color: var(--secondary-color);
@@ -59,6 +57,8 @@
   padding: 0 1rem;
   border: 2px solid var(--tertiary-color);
   color: var(--tertiary-color);
+  position: relative;
+  z-index: 10;
 }
 
 .problem {
@@ -71,6 +71,17 @@
   border-radius: 10px;
   gap: 2rem;
   width: 100%;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.problem:hover {
+  transform: scale(1.005);
+  background-color: var(--primary-darker-color);
+}
+
+.problem-title {
+  color: white;
 }
 
 .go-back {
