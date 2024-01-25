@@ -1,5 +1,5 @@
 .users-container {
-  max-width: 1200px;
+  max-width: 1000px;
   width: 90%;
   margin: auto;
   text-align: center;
@@ -14,8 +14,7 @@
 }
 
 .problems-container {
-  display: grid;
-  place-content: center;
+  width: 100%;
   padding: 1rem;
   gap: 2rem;
 }
@@ -29,6 +28,7 @@
   display: grid;
   gap: 2rem;
   margin-top: 2rem;
+  width: 100%;
 }
 
 .day-container {
@@ -64,11 +64,12 @@
 .problem {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primary-color);
   padding: 1rem;
   border-radius: 10px;
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -91,6 +92,8 @@
 
 .tags-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -100,10 +103,32 @@
   font-size: 0.7rem;
   color: var(--highlight-color);
   background-color: var(--highlight-darker-color);
+  max-width: 115px;
 }
 
-@media (max-width: 1000px) {
-  .problems-container {
+@media (max-width: 900px) {
+  .problem {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .problem-title {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .problem {
     grid-template-columns: 1fr;
+  }
+  .tags-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tag {
+    text-align: center;
+    margin: auto;
   }
 }
