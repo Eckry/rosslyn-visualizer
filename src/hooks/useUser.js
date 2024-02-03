@@ -24,18 +24,20 @@ export default function useUser(user) {
             const problemYear = days[problemDate.getDay()];
             const problemWeek = getWeekOfMonth(problemDate);
             if (dates[problemWeek]) {
-              // Check if the week exists already
+              // Check if the week exists
               dates[problemWeek].max = Math.max(
                 dates[problemWeek].max, // Find max rating of each week every iteration
                 problem.problem.rating
               );
-              if (
-                dates[problemWeek][problemYear] &&
-                !dates[problemWeek][problemYear].some(
-                  //Check if the date already exists in the week and check if the problem is already there
-                  (element) => element.name === problem.problem.name
+              if (dates[problemWeek][problemYear]) {
+                //Check if the date already exists in the week
+                if (
+                  dates[problemWeek][problemYear].some(
+                    //Check if the problem is already there
+                    (element) => element.name === problem.problem.name
+                  )
                 )
-              )
+                  return;
                 return dates[problemWeek][problemYear].push({
                   name: problem.problem.name,
                   tags: problem.problem.tags, // If the date exists, then add new problem
@@ -43,6 +45,7 @@ export default function useUser(user) {
                   id: problem.author.contestId,
                   index: problem.problem.index,
                 });
+              }
               return (dates[problemWeek][problemYear] = [
                 {
                   name: problem.problem.name,
