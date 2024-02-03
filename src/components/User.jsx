@@ -32,7 +32,7 @@ export default function User() {
       <header className="user-header">
         {Object.keys(data).map((date) => {
           return (
-            <a className="header-link" href={`#${Number(date) + 1}`}>
+            <a key={date} className="header-link" href={`#${Number(date) + 1}`}>
               Semana {Number(date) + 1}
             </a>
           );
@@ -51,7 +51,7 @@ export default function User() {
                   </h1>
                   <div className="days-package">
                     {days.map((day) => {
-                      if (!data[date][day]) return <NoProblems day={day} />;
+                      if (!data[date][day]) return <NoProblems key={day} day={day} />;
                       return (
                         <div key={day} className="day-container">
                           <h4 className="day">{day}</h4>
@@ -76,8 +76,8 @@ export default function User() {
                                     {rating}
                                   </p>
                                   <div className="tags-container">
-                                    {tags.map((tag) => (
-                                      <p title={tag} className="tag" key={tag}>
+                                    {tags.map((tag, idx) => (
+                                      <p title={tag} className="tag" key={idx}>
                                         {tag}
                                       </p>
                                     ))}
