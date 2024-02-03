@@ -39,7 +39,11 @@ export default function User() {
         })}
       </header>
       <main className="users-container">
-        <h1>{user}</h1>
+        <h1 className="profile-link">
+          <a className="profile-anchor" target="_blank" href={`https://codeforces.com/profile/${user}`}>
+            {user}
+          </a>
+        </h1>
         <ul className="problems-container">
           {Object.keys(data).map((date) => {
             let counter = 0;
@@ -51,7 +55,8 @@ export default function User() {
                   </h1>
                   <div className="days-package">
                     {days.map((day) => {
-                      if (!data[date][day]) return <NoProblems key={day} day={day} />;
+                      if (!data[date][day])
+                        return <NoProblems key={day} day={day} />;
                       return (
                         <div key={day} className="day-container">
                           <h4 className="day">{day}</h4>

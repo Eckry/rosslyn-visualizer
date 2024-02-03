@@ -14,6 +14,7 @@
   --secondary-darker-color: #1d1f24;
   --secondary-transparent-color: #393e469a;
   --tertiary-color: #FFD369;
+  --tertiary-darker-color: #ac8e47;
   --highlight-color: #d35100;
   --highlight-darker-color: #3b00007e;
   --highlight-color-two: purple;
@@ -32,6 +33,7 @@ li {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 hr {
