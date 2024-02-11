@@ -19,15 +19,15 @@
 }
 
 .erick {
-  background-image: url("../../../public/erick.png");
+  background-image: url("/erick.png");
 }
 
 .estebanP {
-  background-image: url("../../../public/estebanP.png");
+  background-image: url("/estebanP.png");
 }
 
 .estebanS {
-  background-image: url("../../../public/estebanS.jpeg");
+  background-image: url("/estebanS.jpeg");
 }
 
 .link:hover ~ .link {
