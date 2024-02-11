@@ -1,33 +1,78 @@
 .link {
   text-decoration: none;
   color: white;
-  background-color: var(--secondary-color);
-  box-shadow: 0 0 10px 1px var(--secondary-color);
-  padding: 1rem;
   min-height: 600px;
+  overflow: hidden;
   width: 300px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   display: grid;
+  font-weight: bold;
   place-content: center;
-  border-radius: 10px;
+  color: transparent;
+}
+
+.erick,
+.estebanP,
+.estebanS {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.erick {
+  background-image: url("erick.png");
+}
+
+.estebanP {
+  background-image: url("estebanP.png");
+}
+
+.estebanS {
+  background-image: url("estebanS.jpeg");
 }
 
 .link:hover ~ .link {
-  box-shadow: 0 0 10px 1px var(--secondary-darker-color);
+  filter: grayscale(50%);
 }
 
 .link:has(~ .link:hover) {
-  box-shadow: 0 0 10px 1px var(--secondary-darker-color);
+  filter: grayscale(50%);
 }
 
 .link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px 1px var(--secondary-brighty-color);
+  filter: grayscale(0);
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1000px) {
   .link {
     min-height: 200px;
     width: 100%;
+  }
+
+  .link {
+    filter: none;
+    color: white;
+  }
+
+  .erick,
+  .estebanP,
+  .estebanS {
+    background-image: none;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px 1px var(--secondary-color);
+    border-radius: 1rem;
+  }
+
+  .link:hover ~ .link {
+    box-shadow: 0 0 5px 1px var(--secondary-darker-color);
+    filter: none;
+  }
+  
+  .link:has(~ .link:hover) {
+    filter: none;
+    box-shadow: 0 0 5px 1px var(--secondary-darker-color);
+  }
+  
+  .link:hover {
+    transform: scale(1.05);
   }
 }

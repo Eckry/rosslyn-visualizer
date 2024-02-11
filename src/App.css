@@ -61,15 +61,15 @@ hr {
   text-align: center;
   display: flex;
   justify-content: center;
-  gap: 2rem;
   margin: auto;
   padding-top: 5rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .main-container {
     padding-top: 3.5rem;
     width: 90%;
     flex-direction: column;
+    gap: 1rem;
   }
 }
