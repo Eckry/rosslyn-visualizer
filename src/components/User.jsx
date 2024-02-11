@@ -40,7 +40,11 @@ export default function User() {
       </header>
       <main className="users-container">
         <h1 className="profile-link">
-          <a className="profile-anchor" target="_blank" href={`https://codeforces.com/profile/${user}`}>
+          <a
+            className="profile-anchor"
+            target="_blank"
+            href={`https://codeforces.com/profile/${user}`}
+          >
             {user}
           </a>
         </h1>
