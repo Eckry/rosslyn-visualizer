@@ -17,7 +17,7 @@ export default function User() {
         <h1>{user}</h1>
         <Loading />
         <Link className="go-back" to={"/"}>
-          Go back
+          Volver
         </Link>
       </main>
     );
