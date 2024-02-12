@@ -39,7 +39,6 @@ export default function User() {
         })}
       </header>
       <main className="users-container">
-        <img src="kyhos.jpeg" alt="" />
         <h1 className="profile-link">
           <a
             className="profile-anchor"
