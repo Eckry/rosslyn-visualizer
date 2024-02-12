@@ -36,6 +36,7 @@
 
 .estebanS {
   background-image: url("/estebanS.webp");
+  background-position: 0 -1px;
 }
 
 .link:hover ~ .link {
