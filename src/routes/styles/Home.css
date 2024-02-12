@@ -1,3 +1,11 @@
+.main-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 5rem;
+}
+
 .link {
   text-decoration: none;
   color: white;
@@ -19,15 +27,15 @@
 }
 
 .erick {
-  background-image: url("/erick.png");
+  background-image: url("/erick.webp");
 }
 
 .estebanP {
-  background-image: url("/estebanP.png");
+  background-image: url("/estebanP.webp");
 }
 
 .estebanS {
-  background-image: url("/estebanS.jpeg");
+  background-image: url("/estebanS.webp");
 }
 
 .link:hover ~ .link {
@@ -43,6 +51,13 @@
 }
 
 @media (max-width: 1000px) {
+  .main-container {
+    padding-top: 3.5rem;
+    width: 90%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .link {
     min-height: 200px;
     width: 100%;
