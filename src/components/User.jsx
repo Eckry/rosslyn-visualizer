@@ -27,6 +27,8 @@ export default function User() {
     return { color: rating === max ? "var(--highlight-color-two)" : "white" };
   };
 
+  let total = 0;
+
   return (
     <>
       <header className="user-header">
@@ -67,6 +69,7 @@ export default function User() {
                           <div className="problem-container">
                             {data[date][day].map((problem) => {
                               counter++;
+                              total++;
                               const { tags, name, rating, id, index } = problem;
                               return (
                                 <a
@@ -107,6 +110,7 @@ export default function User() {
           })}
         </ul>
 
+        <h4>Total: {total}</h4>
         <Link className="go-back" to={"/"}>
           Volver
         </Link>
