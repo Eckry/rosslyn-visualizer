@@ -35,6 +35,10 @@
   min-height: 500px;
 }
 
+.profile-link {
+  margin-top: 50px;
+}
+
 .problems-container {
   width: 100%;
   padding: 1rem;
@@ -115,11 +119,6 @@
   color: white;
   color: var(--highlight-color);
   font-weight: bold;
-  transition: 0.25s ease-in-out;
-}
-
-.go-back:hover {
-  transform: scale(1.1);
 }
 
 .not-found {
@@ -141,6 +140,15 @@
   color: var(--highlight-color);
   background-color: var(--highlight-darker-color);
   max-width: 115px;
+}
+
+.noproblem-container {
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+  color: white;
+  display: grid;
+  gap: 100px;
 }
 
 @media (max-width: 900px) {
