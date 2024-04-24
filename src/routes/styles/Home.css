@@ -17,7 +17,7 @@
   font-weight: bold;
   place-content: center;
   color: transparent;
-  filter: grayscale(20%);
+  filter: grayscale(30%);
   height: 100%;
 }
 
@@ -27,15 +27,15 @@
 }
 
 .link:hover ~ .link {
-  filter: grayscale(60%);
+  filter: grayscale(70%);
 }
 
 .link:has(~ .link:hover) {
-  filter: grayscale(60%);
+  filter: grayscale(70%);
 }
 
 .link:hover {
-  filter: grayscale(20%);
+  filter: grayscale(30%);
 }
 
 @media (max-width: 1000px) {
