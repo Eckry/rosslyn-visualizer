@@ -40,17 +40,25 @@ export default function User() {
     );
   }
 
+  const isInitialWeek = Object.keys(data).length === 1;
+
   return (
     <>
-      <header className="user-header">
-        {Object.keys(data).map((date) => {
-          return (
-            <a key={date} className="header-link" href={`#${Number(date) + 1}`}>
-              Semana {Number(date) + 1}
-            </a>
-          );
-        })}
-      </header>
+      {!isInitialWeek && (
+        <header className="user-header">
+          {Object.keys(data).map((date) => {
+            return (
+              <a
+                key={date}
+                className="header-link"
+                href={`#${Number(date) + 1}`}
+              >
+                Semana {Number(date) + 1}
+              </a>
+            );
+          })}
+        </header>
+      )}
       <main className="users-container">
         <h1 className="profile-link">
           <a
@@ -114,7 +122,7 @@ export default function User() {
                       );
                     })}
                   </div>
-                  <h4>Total de semana: {counter}</h4>
+                  <h4 className="weekly-total">Total: {counter}</h4>
                 </li>
                 <hr />
               </React.Fragment>
@@ -122,7 +130,7 @@ export default function User() {
           })}
         </ul>
 
-        <h4>Total: {total}</h4>
+        <h4 className="all-total">Total de todos los tiempos: {total}</h4>
         <Link className="go-back" to={"/"}>
           Volver
         </Link>
