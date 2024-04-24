@@ -52,12 +52,13 @@
 
 .week-container {
   display: grid;
-  gap: 2rem;
   margin-top: 2rem;
   width: 100%;
 }
 
 .week-title {
+  font-style: italic;
+  color: var(--highlight-color);
   scroll-margin-top: 60px;
 }
 
@@ -68,7 +69,6 @@
 .problem-container {
   border-radius: 1rem;
   margin-top: -14px;
-  min-height: 150px;
   border: 2px solid var(--tertiary-color);
   background-color: var(--secondary-color);
   display: flex;
@@ -115,10 +115,31 @@
 }
 
 .go-back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
   text-decoration: none;
   color: white;
   color: var(--highlight-color);
   font-weight: bold;
+  border: 2px solid var(--highlight-color);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: 0.25s ease-in-out;
+}
+
+.go-back:hover {
+  scale: 1.1;
+}
+
+.weekly-total {
+  font-size: 1.2rem;
+  color: var(--highlight-brighty-color-two);
+}
+
+.all-total {
+  font-size: 1.6rem;
+  color: var(--tertiary-color);
 }
 
 .not-found {
