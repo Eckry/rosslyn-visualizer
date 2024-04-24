@@ -31,12 +31,11 @@
 }
 
 .estebanP {
-  background-image: url("/estebanP.webp");
+  background-image: url("/esteban.webp");
 }
 
 .estebanS {
-  background-image: url("/estebanS.webp");
-  background-position: 0 -1px;
+  background-image: url("/diego.webp");
 }
 
 .link:hover ~ .link {

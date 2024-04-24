@@ -10,8 +10,8 @@ export default function Home() {
       <Link className="link estebanP" to="/KyhosCrusher">
         KyhosCrusher
       </Link>
-      <Link className="link estebanS" to="/Wyoming">
-        Wyoming
+      <Link className="link estebanS" to="/AbnGrp">
+        AbnGrp
       </Link>
     </main>
   );
