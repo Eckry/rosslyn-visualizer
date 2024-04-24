@@ -4,14 +4,14 @@ import "./styles/Home.css";
 export default function Home() {
   return (
     <main className="main-container">
-      <Link className="link erick" to="/Eckry">
-        Eckry
+      <Link className="link" to="/Eckry">
+        <img src="./erick.webp" alt="" />
       </Link>
-      <Link className="link estebanP" to="/KyhosCrusher">
-        KyhosCrusher
+      <Link className="link" to="/KyhosCrusher">
+        <img src="./esteban.webp" alt="" />
       </Link>
-      <Link className="link estebanS" to="/AbnGrp">
-        AbnGrp
+      <Link className="link" to="/AbnGrp">
+        <img src="./diego.webp" alt="" />
       </Link>
     </main>
   );

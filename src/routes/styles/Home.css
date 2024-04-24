@@ -3,13 +3,13 @@
   display: flex;
   justify-content: center;
   margin: auto;
-  padding-top: 5rem;
+  align-items: center;
+  padding-top: 50px;
 }
 
 .link {
   text-decoration: none;
   color: white;
-  min-height: 600px;
   overflow: hidden;
   width: 300px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -17,25 +17,12 @@
   font-weight: bold;
   place-content: center;
   color: transparent;
+  height: 100%;
 }
 
-.erick,
-.estebanP,
-.estebanS {
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.erick {
-  background-image: url("/erick.webp");
-}
-
-.estebanP {
-  background-image: url("/esteban.webp");
-}
-
-.estebanS {
-  background-image: url("/diego.webp");
+.link > img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .link:hover ~ .link {
@@ -52,42 +39,9 @@
 
 @media (max-width: 1000px) {
   .main-container {
-    padding-top: 3.5rem;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
     width: 90%;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .link {
-    min-height: 200px;
-    width: 100%;
-  }
-
-  .link {
-    filter: none;
-    color: white;
-  }
-
-  .erick,
-  .estebanP,
-  .estebanS {
-    background-image: none;
-    background-color: var(--secondary-color);
-    box-shadow: 0 0 5px 1px var(--secondary-color);
-    border-radius: 1rem;
-  }
-
-  .link:hover ~ .link {
-    box-shadow: 0 0 5px 1px var(--secondary-darker-color);
-    filter: none;
-  }
-  
-  .link:has(~ .link:hover) {
-    filter: none;
-    box-shadow: 0 0 5px 1px var(--secondary-darker-color);
-  }
-  
-  .link:hover {
-    transform: scale(1.05);
   }
 }
