@@ -1,4 +1,4 @@
-import "./styles/Week.css"
+import "./styles/Week.css";
 import Day from "./Day";
 import { days } from "../constants.json";
 
@@ -7,7 +7,8 @@ export default function Week({ date, data }) {
     <>
       <li className="week-container">
         <h1 className="week-title" id={Number(date) + 1}>
-          Semana {Number(date) + 1}
+          <span className="week-highlight">{Number(date) + 1}.</span>
+          <span className="week-line"></span>
         </h1>
         <div className="days-package">
           {days.map((day, idx) => {
