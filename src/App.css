@@ -62,8 +62,3 @@ a {
   text-decoration: none;
   color: white;
 }
-
-hr {
-  background-color: var(--tertiary-color);
-  height: 5px;
-}

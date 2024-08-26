@@ -24,7 +24,6 @@ export default function Week({ date, data }) {
           })}
         </div>
       </li>
-      <hr />
     </>
   );
 }
