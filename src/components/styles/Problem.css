@@ -35,12 +35,17 @@
   }
 }
 
+.tags-show:hover {
+  color: var(--highlight);
+}
+
 .tags-show:hover .tags-container {
   opacity: 1;
   scale: 1;
 }
 
 .tags-container {
+  color: var(--white);
   scale: 0.7;
   pointer-events: none;
   display: flex;
@@ -62,11 +67,6 @@
   border-radius: 8px;
   font-size: 0.7rem;
   text-wrap: nowrap;
-}
-
-.problem:hover {
-  transform: scale(1.005);
-  background-color: var(--primary-darker-color);
 }
 
 @media (max-width: 900px) {
