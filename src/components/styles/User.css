@@ -47,23 +47,6 @@
   gap: 2rem;
 }
 
-.days-package {
-  display: grid;
-  gap: 1rem;
-}
-
-.week-container {
-  display: grid;
-  margin-top: 2rem;
-  width: 100%;
-}
-
-.week-title {
-  font-style: italic;
-  color: var(--highlight-color);
-  scroll-margin-top: 60px;
-}
-
 .go-back {
   position: fixed;
   right: 20px;

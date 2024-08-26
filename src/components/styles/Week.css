@@ -1,0 +1,16 @@
+.week-container {
+  display: grid;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.week-title {
+  font-style: italic;
+  color: var(--highlight-color);
+  scroll-margin-top: 60px;
+}
+
+.days-package {
+  display: grid;
+  gap: 1rem;
+}

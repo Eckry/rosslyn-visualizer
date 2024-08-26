@@ -1,3 +1,4 @@
+import "./styles/Week.css"
 import Day from "./Day";
 import { days } from "../constants.json";
 
