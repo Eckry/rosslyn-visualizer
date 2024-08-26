@@ -4,10 +4,32 @@ import Loading from "./Loading";
 import "./styles/User.css";
 import consts from "../constants.json";
 import Week from "./Week";
+import { useEffect, useMemo, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadStarsPreset } from "@tsparticles/preset-stars";
 
 export default function User() {
   const { user } = useParams();
   const [data, isLoading] = useUser(user);
+  const [init, setInit] = useState(false);
+  
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadStarsPreset(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const options = useMemo(
+    () => ({
+      preset: "stars",
+      background: { color: "transparent" },
+      fullScreen: { enable: true },
+      particles: { number: { value: 200 }, size: { value: 1 } },
+    }),
+    []
+  );
 
   if (isLoading) {
     return (
@@ -20,9 +42,6 @@ export default function User() {
       </main>
     );
   }
-
-  let total = 0;
-  console.log(data);
 
   const isDataEmpty = Object.keys(data).length === 0;
 
@@ -48,6 +67,7 @@ export default function User() {
 
   return (
     <>
+      {init && <Particles id="tsparticles" options={options} />}
       {!isInitialWeek && (
         <header className="user-header">
           {Object.keys(data).map((date) => {
