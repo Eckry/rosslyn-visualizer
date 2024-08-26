@@ -13,14 +13,7 @@ export default function Week({ date, data }) {
         <div className="days-package">
           {days.map((day, idx) => {
             if (!data[date][day]) return;
-            return (
-              <Day
-                key={idx}
-                data={data[date][day]}
-                max={data[date].max}
-                day={day}
-              />
-            );
+            return <Day key={idx} data={data[date][day]} day={day} />;
           })}
         </div>
       </li>

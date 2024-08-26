@@ -7,7 +7,7 @@
   background-color: var(--primary-color);
   margin: auto;
   font-size: 24px;
-  color: var(--green);
+  color: var(--highlight-color-two);
 }
 
 .problem-container {
