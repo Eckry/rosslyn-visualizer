@@ -4,6 +4,7 @@ import { days } from "../constants.json";
 import useUser from "../hooks/useUser";
 import Loading from "./Loading";
 import "./styles/User.css";
+import consts from "../constants.json";
 
 export default function User() {
   const { user } = useParams();
@@ -29,10 +30,17 @@ export default function User() {
 
   const isDataEmpty = Object.keys(data).length === 0;
 
+  const date = new Date(consts.limitDate);
+  const day = date.getDay();
+  const month = consts.months[date.getMonth()];
+  const year = date.getFullYear();
+
   if (isDataEmpty) {
     return (
       <main className="noproblem-container">
-        <h1>Ningun problema resuelto desde el 22 de abril</h1>
+        <h1>
+          Ningun problema resuelto desde el {day} de {month} de {year}
+        </h1>
         <Link className="go-back" to={"/"}>
           Volver
         </Link>
@@ -53,7 +61,7 @@ export default function User() {
                 className="header-link"
                 href={`#${Number(date) + 1}`}
               >
-                Semana {Number(date) + 1}
+                [S{Number(date) + 1}]
               </a>
             );
           })}

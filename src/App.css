@@ -9,11 +9,11 @@
 :root {
   --primary-color: #222831;
   --primary-darker-color: #1d232b;
-  --secondary-color: #393E46;
+  --secondary-color: #393e46;
   --secondary-brighty-color: #687180;
   --secondary-darker-color: #1d1f24;
   --secondary-transparent-color: #393e469a;
-  --tertiary-color: #FFD369;
+  --tertiary-color: #ffd369;
   --tertiary-darker-color: #ac8e47;
   --highlight-color: #d35100;
   --highlight-darker-color: #3b00007e;
@@ -22,6 +22,7 @@
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
   background-color: var(--primary-color);
   font-family: "Victor Mono Variable", sans-serif;
@@ -40,6 +41,7 @@ body {
 }
 
 *::-webkit-scrollbar {
+  width: 6px;
   background-color: transparent;
 }
 
@@ -56,4 +58,3 @@ hr {
   background-color: var(--tertiary-color);
   height: 5px;
 }
-

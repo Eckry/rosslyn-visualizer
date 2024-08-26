@@ -8,5 +8,19 @@
     "Viernes",
     "Sabado"
   ],
-  "limitDate": "April 22, 2024 00:00:00"
+  "limitDate": "May 1, 2023 00:00:00",
+  "months": [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
+  ]
 }
