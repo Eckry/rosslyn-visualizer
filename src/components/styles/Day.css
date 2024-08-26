@@ -1,0 +1,28 @@
+.day-container {
+  padding: 1rem;
+}
+
+.day {
+  border-radius: 7px;
+  background-color: var(--primary-color);
+  width: fit-content;
+  margin: auto;
+  padding: 0 1rem;
+  border: 2px solid var(--tertiary-color);
+  color: var(--tertiary-color);
+  position: relative;
+  z-index: 10;
+}
+
+.problem-container {
+  border-radius: 1rem;
+  margin-top: -14px;
+  border: 2px solid var(--tertiary-color);
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}

@@ -1,3 +1,4 @@
+import "./styles/Day.css"
 import Problem from "./Problem";
 
 export default function Day({ data, day, max }) {
