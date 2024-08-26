@@ -1,3 +1,5 @@
+import "./styles/Problem.css"
+
 const dynamicStyleRating = (rating, max) => {
   return { color: rating === max ? "var(--highlight-color-two)" : "white" };
 };
