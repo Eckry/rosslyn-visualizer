@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { IconTag } from "../icons";
 import { colors } from "../utils";
 import "./styles/Problem.css";
-import Particles from "@tsparticles/react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadStarsPreset } from "@tsparticles/preset-stars";
 
 const dynamicStyleRating = (rating) => {
   if (rating >= 2400) return colors.grandmaster;
@@ -14,6 +16,21 @@ const dynamicStyleRating = (rating) => {
 };
 
 export default function Problem({ tags, name, rating, id, index, max }) {
+  const [init, setInit] = useState(false);
+
+  const color = dynamicStyleRating(rating);
+  const shadow = { boxShadow: `0 0 30px -20px ${color}` };
+
+  const showParticles = max === rating;
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadStarsPreset(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
   const options = {
     preset: "stars",
     background: { color: "transparent" },
@@ -21,13 +38,10 @@ export default function Problem({ tags, name, rating, id, index, max }) {
     particles: {
       number: { value: 10 },
       size: { value: 2 },
-      color: { value: "#facc15" },
+      color: { value: color },
     },
   };
-  const color = dynamicStyleRating(rating);
-  const shadow = { boxShadow: `0 0 30px -20px ${color}` };
 
-  const showParticles = max === rating;
   return (
     <a
       target="_blank"
@@ -36,7 +50,7 @@ export default function Problem({ tags, name, rating, id, index, max }) {
       style={shadow}
       rel="noreferrer"
     >
-      {showParticles && (
+      {showParticles && init && (
         <Particles
           options={options}
           id={`${index}-${id}`}
