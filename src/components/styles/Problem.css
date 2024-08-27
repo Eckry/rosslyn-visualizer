@@ -13,6 +13,10 @@
   position: relative;
 }
 
+.problem:hover .problem-title{
+  color: var(--highlight);
+}
+
 .problem-title {
   color: white;
   max-width: 100%;
@@ -21,6 +25,7 @@
   white-space: nowrap;
   background-color: var(--primary-color);
   z-index: 50;
+  transition: 0.25s ease-in-out;
 }
 
 .tags-show {
