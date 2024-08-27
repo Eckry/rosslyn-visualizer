@@ -4,13 +4,13 @@ import "./styles/Problem.css";
 import Particles from "@tsparticles/react";
 
 const dynamicStyleRating = (rating) => {
-  if (rating >= 2400) return { color: colors.grandmaster };
-  if (rating >= 2100) return { color: colors.master };
-  if (rating >= 1900) return { color: colors.candidate };
-  if (rating >= 1600) return { color: colors.expert };
-  if (rating >= 1400) return { color: colors.specialist };
-  if (rating >= 1200) return { color: colors.pupil };
-  return { color: colors.newbie };
+  if (rating >= 2400) return colors.grandmaster;
+  if (rating >= 2100) return colors.master;
+  if (rating >= 1900) return colors.candidate;
+  if (rating >= 1600) return colors.expert;
+  if (rating >= 1400) return colors.specialist;
+  if (rating >= 1200) return colors.pupil;
+  return colors.newbie;
 };
 
 export default function Problem({ tags, name, rating, id, index, max }) {
@@ -24,6 +24,8 @@ export default function Problem({ tags, name, rating, id, index, max }) {
       color: { value: "#facc15" },
     },
   };
+  const color = dynamicStyleRating(rating);
+  const shadow = { boxShadow: `0 0 30px -20px ${color}` };
 
   const showParticles = max === rating;
   return (
@@ -31,6 +33,7 @@ export default function Problem({ tags, name, rating, id, index, max }) {
       target="_blank"
       href={`https://codeforces.com/problemset/problem/${id}/${index}`}
       className="problem"
+      style={shadow}
       rel="noreferrer"
     >
       {showParticles && (
@@ -41,7 +44,7 @@ export default function Problem({ tags, name, rating, id, index, max }) {
         />
       )}
       <p className="problem-title">{name}</p>
-      <p style={dynamicStyleRating(rating)}>{rating}</p>
+      <p style={{ color }}>{rating}</p>
       <div className="tags-show">
         <IconTag />
         <div className="tags-container">
