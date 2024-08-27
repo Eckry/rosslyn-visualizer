@@ -53,7 +53,7 @@ export default function Problem({ tags, name, rating, id, index, max }) {
       {showParticles && init && (
         <Particles
           options={options}
-          id={`${index}-${id}`}
+          id={crypto.randomUUID()}
           className="tsparticles2"
         />
       )}
