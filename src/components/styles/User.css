@@ -3,15 +3,14 @@
   width: 100%;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
   font-size: clamp(0.5rem, 3vw, 1.2rem);
   align-items: center;
-  gap: 16px;
   padding: 1rem;
   z-index: 1000;
   background-color: var(--primary-color);
   overflow-x: auto;
+  display: flex;
+  gap: 16px;
 }
 
 .header-link {
@@ -87,4 +86,3 @@
   display: grid;
   gap: 100px;
 }
-
