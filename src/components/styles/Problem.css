@@ -20,6 +20,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  background-color: var(--primary-color);
+  z-index: 50;
 }
 
 .tags-show {
@@ -68,6 +70,14 @@
   border-radius: 8px;
   font-size: 0.7rem;
   text-wrap: nowrap;
+}
+
+.tsparticles2 {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
 }
 
 @media (max-width: 900px) {
