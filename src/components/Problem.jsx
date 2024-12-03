@@ -19,7 +19,7 @@ export default function Problem({ tags, name, rating, id, index, max }) {
   const [init, setInit] = useState(false);
 
   const color = dynamicStyleRating(rating);
-  const shadow = { boxShadow: `0 0 30px -20px ${color}` };
+  const shadow = { boxShadow: `0 0 30px -20px ${color}`, borderColor: color };
 
   const showParticles = max === rating;
 
