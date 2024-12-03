@@ -41,25 +41,8 @@ export default function User() {
     );
   }
 
-  const isInitialWeek = Object.keys(data).length === 1;
-
   return (
     <>
-      {!isInitialWeek && (
-        <header className="user-header">
-          {Object.keys(data).map((date) => {
-            return (
-              <a
-                key={date}
-                className="header-link"
-                href={`#${Number(date) + 1}`}
-              >
-                [S{Number(date) + 1}]
-              </a>
-            );
-          })}
-        </header>
-      )}
       <main className="users-container">
         <h1 className="profile-link">
           <a

@@ -10,10 +10,19 @@ export default function Week({ date, data }) {
           <span className="week-highlight">{Number(date) + 1}.</span>
           <span className="week-line"></span>
         </h1>
+        <label htmlFor={`days-opener-${Number(date)}`} className="days-opener-button"></label>
+        <input id={`days-opener-${Number(date)}`} className="days-opener" type="checkbox" />
         <div className="days-package">
           {days.map((day, idx) => {
             if (!data[date][day]) return;
-            return <Day key={idx} data={data[date][day]} max={data[date].max} day={day} />;
+            return (
+              <Day
+                key={idx}
+                data={data[date][day]}
+                max={data[date].max}
+                day={day}
+              />
+            );
           })}
         </div>
       </li>
