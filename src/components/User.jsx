@@ -44,18 +44,22 @@ export default function User() {
   return (
     <>
       <main className="users-container">
-        <h1 className="profile-link">
-          <a
-            className="profile-anchor"
-            rel="noreferrer"
-            target="_blank"
-            href={`https://codeforces.com/profile/${user}`}
-          >
-            {user}
-          </a>
-        </h1>
+        <header>
+          <img className="profile-picture" src={data.pfp} alt="profile picture" />
+          <h1 className="profile-link">
+            <a
+              className="profile-anchor"
+              rel="noreferrer"
+              target="_blank"
+              href={`https://codeforces.com/profile/${user}`}
+            >
+              {user}
+            </a>
+          </h1>
+        </header>
         <ul className="problems-container">
           {Object.keys(data).map((date, idx) => {
+            if (date === "pfp") return;
             return <Week key={idx} date={date} data={data} />;
           })}
         </ul>

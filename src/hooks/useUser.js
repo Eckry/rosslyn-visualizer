@@ -9,7 +9,7 @@ function getWeekOfMonth(date) {
 }
 
 export default function useUser(user) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
@@ -68,12 +68,24 @@ export default function useUser(user) {
             ];
           }
         });
-        setData(dates);
+        return dates;
       })
-      .catch((e) => console.error(e))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .then((dates) => {
+        fetch(`https://codeforces.com/api/user.info?handles=${user}`)
+          .then((res) => res.json())
+          .then((userInfo) => {
+            setData(() => {
+              return { ...dates, pfp: userInfo.result[0].titlePhoto };
+            });
+          })
+          .catch((e) => {
+            console.error(e);
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      })
+      .catch((e) => console.error(e));
   }, []);
   return [data, isLoading];
 }
