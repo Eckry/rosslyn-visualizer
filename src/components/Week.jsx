@@ -20,7 +20,7 @@ export default function Week({ date, data }) {
         <label
           htmlFor={`days-opener-${Number(date)}`}
           className="days-opener-button"
-          style={{borderColor}}
+          style={{ borderColor }}
         >
           {totalSolved}
         </label>
@@ -29,6 +29,7 @@ export default function Week({ date, data }) {
           className="days-opener"
           type="checkbox"
         />
+        <span className="week-line2"></span>
         <div className="days-package">
           {days.map((day, idx) => {
             if (!data[date][day]) return;

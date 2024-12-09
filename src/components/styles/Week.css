@@ -17,10 +17,15 @@
 
 .week-highlight {
   color: var(--highlight);
+  padding: 4px;
+  border-radius: 8px;
+  background-color: var(--primary);
+  z-index: 20;
 }
 
 .week-line {
   display: block;
+  position: absolute;
   width: 100%;
   height: 3px;
   background-color: var(--black);
@@ -29,7 +34,7 @@
 .days-opener-button {
   position: absolute;
   left: 50%;
-  top: 10px;
+  top: 14px;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
@@ -41,16 +46,32 @@
   width: 3rem;
   background-color: var(--primary);
   font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
 }
 
-.days-opener-button:hover {
-  background-color: var(--highlight-light);
-  cursor: pointer;
+.week-line2 {
+  width: 0;
+  position: absolute;
+  display: block;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: var(--highlight);
+  transition: 0.8s;
+}
+
+.days-opener:checked ~ .week-line2 {
+  width: 100%;
+}
+
+.week-line:has(~ .days-opener-button:hover) {
+  background-color: var(--highlight);
 }
 
 .days-opener-button:has(~ .days-opener:checked) {
-  background-color: var(--highlight);
-  color: var(--primary);
+  color: var(--highlight);
 }
 
 .days-opener {
@@ -59,7 +80,7 @@
 
 .days-opener:checked ~ .days-package {
   max-height: 100%;
-} 
+}
 
 .days-package {
   display: grid;
