@@ -1,6 +1,7 @@
 import "./styles/Week.css";
 import Day from "./Day";
 import { days } from "../constants.json";
+import { dynamicStyleRating } from "../utils";
 
 export default function Week({ date, data }) {
   const totalSolved = Object.keys(data[date]).reduce((acc, day) => {
@@ -8,6 +9,7 @@ export default function Week({ date, data }) {
     return acc + data[date][day].length;
   }, 0);
 
+  const borderColor = dynamicStyleRating(data[date].max);
   return (
     <>
       <li className="week-container">
@@ -18,6 +20,7 @@ export default function Week({ date, data }) {
         <label
           htmlFor={`days-opener-${Number(date)}`}
           className="days-opener-button"
+          style={{borderColor}}
         >
           {totalSolved}
         </label>

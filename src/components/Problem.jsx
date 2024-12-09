@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react";
 import { IconTag } from "../icons";
-import { colors } from "../utils";
+import { dynamicStyleRating } from "../utils";
 import "./styles/Problem.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadStarsPreset } from "@tsparticles/preset-stars";
-
-const dynamicStyleRating = (rating) => {
-  if (rating >= 2400) return colors.grandmaster;
-  if (rating >= 2100) return colors.master;
-  if (rating >= 1900) return colors.candidate;
-  if (rating >= 1600) return colors.expert;
-  if (rating >= 1400) return colors.specialist;
-  if (rating >= 1200) return colors.pupil;
-  return colors.newbie;
-};
 
 export default function Problem({ tags, name, rating, id, index, max }) {
   const [init, setInit] = useState(false);

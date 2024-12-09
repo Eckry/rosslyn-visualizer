@@ -27,7 +27,7 @@ export default function useUser(user) {
               // Check if the week exists
               dates[problemWeek].max = Math.max(
                 dates[problemWeek].max, // Find max rating of each week every iteration
-                problem.problem.rating
+                problem.problem.rating ?? 0
               );
               if (dates[problemWeek][problemYear]) {
                 //Check if the date already exists in the week
