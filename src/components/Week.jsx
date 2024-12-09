@@ -2,35 +2,47 @@ import "./styles/Week.css";
 import Day from "./Day";
 import { days } from "../constants.json";
 import { dynamicStyleRating } from "../utils";
+import { useState } from "react";
 
 export default function Week({ date, data }) {
+  const [isOpen, setIsOpen] = useState(false);
   const totalSolved = Object.keys(data[date]).reduce((acc, day) => {
     if (day === "max") return acc;
     return acc + data[date][day].length;
   }, 0);
+
+  function handleClick() {
+    setIsOpen((prev) => !prev);
+  }
 
   const borderColor = dynamicStyleRating(data[date].max);
   return (
     <>
       <li className="week-container">
         <h1 className="week-title" id={Number(date) + 1}>
-          <span className="week-highlight">{Number(date) + 1}.</span>
+          <span className="week-highlight">
+            {Number(date) + 1}.
+            <span
+              className={`right-border ${isOpen ? "active" : "closed"}`}
+            ></span>
+          </span>
           <span className="week-line"></span>
         </h1>
-        <label
-          htmlFor={`days-opener-${Number(date)}`}
+        <button
+          onClick={handleClick}
           className="days-opener-button"
-          style={{ borderColor }}
+          style={{
+            borderColor,
+            color: isOpen ? "var(--highlight)" : "var(--gray)",
+          }}
         >
           {totalSolved}
-        </label>
-        <input
-          id={`days-opener-${Number(date)}`}
-          className="days-opener"
-          type="checkbox"
-        />
-        <span className="week-line2"></span>
-        <div className="days-package">
+        </button>
+        <span
+          className="week-line2"
+          style={{ width: isOpen ? "100%" : "0%" }}
+        ></span>
+        <div className="days-package" style={{ height: isOpen ? "100%" : "0" }}>
           {days.map((day, idx) => {
             if (!data[date][day]) return;
             return (

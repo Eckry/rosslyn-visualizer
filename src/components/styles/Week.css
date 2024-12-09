@@ -20,6 +20,19 @@
   border-radius: 8px;
   background-color: var(--primary);
   z-index: 20;
+  position: relative;
+}
+
+.right-border {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--highlight);
+  transition: 1s;
 }
 
 .week-line {
@@ -32,6 +45,7 @@
 
 .days-opener-button {
   position: absolute;
+  color: var(--gray);
   left: 50%;
   top: 14px;
   transform: translateX(-50%);
@@ -49,6 +63,10 @@
   z-index: 2;
 }
 
+.days-opener-button:hover {
+  color: var(--highlight);
+}
+
 .week-line2 {
   width: 0;
   position: absolute;
@@ -61,32 +79,39 @@
   transition: 0.8s;
 }
 
-.days-opener:checked ~ .week-line2 {
-  width: 100%;
-}
-
-.days-opener-button:hover {
-  color: var(--highlight);
-}
-
-.week-line:has(~ .days-opener-button:hover) {
-  background-color: var(--highlight);
-}
-
-.days-opener-button:has(~ .days-opener:checked) {
-  color: var(--highlight);
-}
-
 .days-opener {
   display: none;
-}
-
-.days-opener:checked ~ .days-package {
-  max-height: 100%;
 }
 
 .days-package {
   display: grid;
   overflow: hidden;
-  max-height: 0;
+}
+
+.closed {
+  animation: closed both;
+  animation-duration: 0.05s;
+}
+.active {
+  animation: active both;
+  animation-duration: 0.3s;
+  animation-delay: 0.51s;
+}
+
+@keyframes active {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes closed {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
 }
