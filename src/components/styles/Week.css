@@ -1,6 +1,5 @@
 .week-container {
   display: grid;
-  margin-top: 2rem;
   position: relative;
   width: 100%;
 }
@@ -84,7 +83,6 @@
 
 .days-package {
   display: grid;
-  gap: 1rem;
   overflow: hidden;
   max-height: 0;
 }
