@@ -65,6 +65,10 @@
   width: 100%;
 }
 
+.days-opener-button:hover {
+  color: var(--highlight);
+}
+
 .week-line:has(~ .days-opener-button:hover) {
   background-color: var(--highlight);
 }
