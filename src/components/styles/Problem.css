@@ -10,8 +10,8 @@
   cursor: pointer;
   transition: 0.25s ease-in-out;
   position: relative;
-  border-left: 1px solid;
-  border-right: 1px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
 }
 
 .problem:hover .problem-title {
