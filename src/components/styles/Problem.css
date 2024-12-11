@@ -56,18 +56,16 @@
   color: var(--white);
   scale: 0.7;
   pointer-events: none;
-  display: flex;
   opacity: 0;
   position: absolute;
-  bottom: 200%;
+  bottom: 150%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 2px solid var(--black);
-  padding: 8px;
-  border-radius: 8px;
   transition: opacity 0.25s ease-in-out, scale 0.25s ease-in-out;
-  background-color: var(--primary-color);
+  gap: 10px;
 }
 
 .tag {
@@ -75,6 +73,8 @@
   border-radius: 8px;
   font-size: 0.7rem;
   text-wrap: nowrap;
+  border: 1px solid var(--black);
+  background-color: var(--primary);
 }
 
 .tsparticles2 {
