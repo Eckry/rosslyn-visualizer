@@ -16,15 +16,16 @@ export default function Week({ date, data }) {
   }
 
   const borderColor = dynamicStyleRating(data[date].max);
+
   return (
     <>
       <li className="week-container">
         <h1 className="week-title" id={Number(date) + 1}>
-          <span className="week-highlight">
+          <span
+            className="week-highlight"
+            style={{ color: isOpen ? "var(--highlight)" : "var(--gray)" }}
+          >
             {Number(date) + 1}.
-            <span
-              className={`right-border ${isOpen ? "active" : "closed"}`}
-            ></span>
           </span>
           <span className="week-line"></span>
         </h1>

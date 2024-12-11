@@ -21,6 +21,7 @@
   background-color: var(--primary);
   z-index: 20;
   position: relative;
+  transition: 1s;
 }
 
 .right-border {
@@ -47,7 +48,7 @@
   position: absolute;
   color: var(--gray);
   left: 50%;
-  top: 14px;
+  top: 13.5px;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
@@ -58,9 +59,10 @@
   font-size: 16px;
   width: 3rem;
   background-color: var(--primary);
-  font-weight: bold;
   cursor: pointer;
   z-index: 2;
+  font-family: "Victor Mono Variable", sans-serif;
+  outline: none;
 }
 
 .days-opener-button:hover {
@@ -88,30 +90,3 @@
   overflow: hidden;
 }
 
-.closed {
-  animation: closed both;
-  animation-duration: 0.05s;
-}
-.active {
-  animation: active both;
-  animation-duration: 0.3s;
-  animation-delay: 0.51s;
-}
-
-@keyframes active {
-  from {
-    height: 0%;
-  }
-  to {
-    height: 100%;
-  }
-}
-
-@keyframes closed {
-  from {
-    height: 100%;
-  }
-  to {
-    height: 0%;
-  }
-}
