@@ -43,18 +43,22 @@ export default function Week({ date, data }) {
           className="week-line2"
           style={{ width: isOpen ? "100%" : "0%" }}
         ></span>
-        <div className="days-package" style={{ height: isOpen ? "100%" : "0" }}>
-          {days.map((day, idx) => {
-            if (!data[date][day]) return;
-            return (
-              <Day
-                key={idx}
-                data={data[date][day]}
-                max={data[date].max}
-                day={day}
-              />
-            );
-          })}
+        <div className={`accordion-wrapper ${isOpen ? "accordion-open" : ""}`}>
+          <div className="accordion-content">
+            <div className="days-package">
+              {days.map((day, idx) => {
+                if (!data[date][day]) return;
+                return (
+                  <Day
+                    key={idx}
+                    data={data[date][day]}
+                    max={data[date].max}
+                    day={day}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
       </li>
     </>
