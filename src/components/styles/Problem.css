@@ -12,10 +12,11 @@
   position: relative;
   border-left: 2px solid;
   border-right: 2px solid;
+  transition: 0.25s;
 }
 
-.problem:hover .problem-title {
-  color: var(--highlight);
+.problem:hover  {
+  scale: 1.05;
 }
 
 .problem-title {

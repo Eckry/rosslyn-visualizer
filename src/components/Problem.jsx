@@ -47,9 +47,11 @@ export default function Problem({ tags, name, rating, id, index, max }) {
           className="tsparticles2"
         />
       )}
-      <p className="problem-title">{name}</p>
+      <p style={{ color }} className="problem-title">
+        {name}
+      </p>
       <p style={{ color }}>{rating}</p>
-      <div className="tags-show">
+      <div style={{ color: color }} className="tags-show">
         <IconTag />
         <div className="tags-container">
           {tags.map((tag, idx) => (
