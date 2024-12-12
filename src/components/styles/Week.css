@@ -28,7 +28,9 @@
   align-items: center;
   scroll-margin-top: 60px;
   color: var(--gray);
+  font-size: 24px;
   text-align: left;
+  position: relative;
 }
 
 .week-highlight {
@@ -65,8 +67,8 @@
   position: absolute;
   color: var(--gray);
   left: 50%;
-  top: 13.5px;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,12 +92,12 @@
   width: 0;
   position: absolute;
   display: block;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%);
   height: 2px;
   background-color: var(--highlight);
   transition: 0.8s;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .days-opener {

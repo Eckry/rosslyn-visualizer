@@ -28,21 +28,21 @@ export default function Week({ date, data }) {
             {Number(date) + 1}.
           </span>
           <span className="week-line"></span>
+          <button
+            onClick={handleClick}
+            className="days-opener-button"
+            style={{
+              borderColor,
+              color: isOpen ? "var(--highlight)" : "var(--gray)",
+            }}
+          >
+            {totalSolved}
+          </button>
+          <span
+            className="week-line2"
+            style={{ width: isOpen ? "100%" : "0%" }}
+          ></span>
         </h1>
-        <button
-          onClick={handleClick}
-          className="days-opener-button"
-          style={{
-            borderColor,
-            color: isOpen ? "var(--highlight)" : "var(--gray)",
-          }}
-        >
-          {totalSolved}
-        </button>
-        <span
-          className="week-line2"
-          style={{ width: isOpen ? "100%" : "0%" }}
-        ></span>
         <div className={`accordion-wrapper ${isOpen ? "accordion-open" : ""}`}>
           <div className="accordion-content">
             <div className="days-package">
