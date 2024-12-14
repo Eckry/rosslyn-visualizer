@@ -59,7 +59,7 @@
   pointer-events: none;
   opacity: 0;
   position: absolute;
-  bottom: 150%;
+  right: 150%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
