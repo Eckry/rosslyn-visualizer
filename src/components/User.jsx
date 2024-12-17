@@ -21,31 +21,22 @@ export default function User() {
     );
   }
 
-  const isDataEmpty = Object.keys(data).length === 0;
+  const isDataEmpty = Object.keys(data).length === 1;
 
   const date = new Date(consts.limitDate);
   const day = date.getDay();
   const month = consts.months[date.getMonth()];
   const year = date.getFullYear();
 
-  if (isDataEmpty) {
-    return (
-      <main className="noproblem-container">
-        <h1>
-          Ningun problema resuelto desde el {day} de {month} de {year}
-        </h1>
-        <Link className="go-back" to={"/"}>
-          Volver
-        </Link>
-      </main>
-    );
-  }
-
   return (
     <>
       <main className="users-container">
         <header>
-          <img className="profile-picture" src={data.pfp} alt="profile picture" />
+          <img
+            className="profile-picture"
+            src={data.pfp}
+            alt="profile picture"
+          />
           <h1 className="profile-link">
             <a
               className="profile-anchor"
@@ -57,12 +48,16 @@ export default function User() {
             </a>
           </h1>
         </header>
-        <ul className="problems-container">
-          {Object.keys(data).map((date, idx) => {
-            if (date === "pfp") return;
-            return <Week key={idx} date={date} data={data} />;
-          })}
-        </ul>
+        {isDataEmpty ? (
+          <h2 className="no-problems">No se ha resuelto ningun problema desde el {day} de {month} del {year}</h2>
+        ) : (
+          <ul className="problems-container">
+            {Object.keys(data).map((date, idx) => {
+              if (date === "pfp") return;
+              return <Week key={idx} date={date} data={data} />;
+            })}
+          </ul>
+        )}
 
         <Link className="go-back" to={"/"}>
           Volver
