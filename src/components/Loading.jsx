@@ -2,16 +2,13 @@ import "./styles/Loading.css";
 
 export default function Loading() {
   return (
-    <div className="banter-loader">
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
-      <div className="banter-loader__box"></div>
+    <div className="container">
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
     </div>
   );
 }

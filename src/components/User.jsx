@@ -3,7 +3,7 @@ import useUser from "../hooks/useUser";
 import "./styles/User.css";
 import consts from "../constants.json";
 import Week from "./Week";
-import "ldrs/tailChase";
+import Loading from "./Loading";
 
 export default function User() {
   const { user } = useParams();
@@ -12,7 +12,7 @@ export default function User() {
   if (isLoading) {
     return (
       <main className="users-loading">
-        <l-tail-chase size="80" speed="1" color="#facc15"></l-tail-chase>
+        <Loading />
         <Link className="go-back" to={"/"}>
           Volver
         </Link>
