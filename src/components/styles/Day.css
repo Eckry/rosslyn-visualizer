@@ -4,7 +4,6 @@
 
 .day {
   border-radius: 7px;
-  background-color: var(--primary-color);
   margin: auto;
   font-size: 24px;
   color: var(--highlight-darker-color);

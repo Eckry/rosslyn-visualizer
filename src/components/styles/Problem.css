@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
   padding: 1rem;
   gap: 2rem;
   width: 100%;
@@ -25,7 +24,6 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  background-color: var(--primary-color);
   z-index: 50;
   transition: 0.25s ease-in-out;
 }

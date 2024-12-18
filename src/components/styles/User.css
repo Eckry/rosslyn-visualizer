@@ -26,6 +26,12 @@
   text-wrap: nowrap;
 }
 
+.users-loading {
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+}
+
 .users-container {
   max-width: 1000px;
   width: 90%;

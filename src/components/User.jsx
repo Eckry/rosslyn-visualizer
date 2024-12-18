@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import useUser from "../hooks/useUser";
-import Loading from "./Loading";
 import "./styles/User.css";
 import consts from "../constants.json";
 import Week from "./Week";
+import "ldrs/tailChase";
 
 export default function User() {
   const { user } = useParams();
@@ -11,9 +11,8 @@ export default function User() {
 
   if (isLoading) {
     return (
-      <main className="users-container">
-        <h1>{user}</h1>
-        <Loading />
+      <main className="users-loading">
+        <l-tail-chase size="80" speed="1" color="#facc15"></l-tail-chase>
         <Link className="go-back" to={"/"}>
           Volver
         </Link>
@@ -49,7 +48,10 @@ export default function User() {
           </h1>
         </header>
         {isDataEmpty ? (
-          <h2 className="no-problems">No se ha resuelto ningun problema desde el {day} de {month} del {year}</h2>
+          <h2 className="no-problems">
+            No se ha resuelto ningun problema desde el {day + 1} de {month} del{" "}
+            {year}
+          </h2>
         ) : (
           <ul className="problems-container">
             {Object.keys(data).map((date, idx) => {
