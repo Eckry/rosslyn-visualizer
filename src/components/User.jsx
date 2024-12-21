@@ -5,6 +5,7 @@ import consts from "../constants.json";
 import Week from "./Week";
 import Loading from "./Loading";
 import { useEffect, useRef } from "react";
+import { IconGoBack, IconGoBackShape } from "../icons";
 
 export default function User() {
   const { user } = useParams();
@@ -22,7 +23,8 @@ export default function User() {
       <main className="users-loading">
         <Loading />
         <Link className="go-back" to={"/"}>
-          Volver
+          <IconGoBackShape />
+          <IconGoBack />
         </Link>
       </main>
     );
@@ -70,7 +72,8 @@ export default function User() {
         )}
       </main>
       <Link className="go-back" to={"/"}>
-        Volver
+        <IconGoBackShape />
+        <IconGoBack />
       </Link>
     </>
   );

@@ -69,16 +69,13 @@
   bottom: 20px;
   text-decoration: none;
   color: white;
-  color: var(--highlight-color);
   font-weight: bold;
-  border: 2px solid var(--highlight-color);
   padding: 1rem;
   border-radius: 8px;
-  transition: 0.25s ease-in-out;
-}
-
-.go-back:hover {
-  scale: 1.1;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  transition: 0.3s ease;
 }
 
 .weekly-total {
@@ -98,4 +95,33 @@
 
 .no-problems {
   color: var(--gray);
+}
+
+.cyber-shape {
+  display: block;
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: drop-shadow(0 0 2px #2a2a2a);
+  z-index: -1;
+  fill: var(--primary-color);
+}
+
+.stroke {
+  stroke: #fff3;
+  transition: 0.3s ease;
+}
+
+.go-back:hover .stroke {
+  stroke: var(--highlight-color);
+}
+
+.go-back:hover .cyber-shape {
+  fill: #090701;
+}
+
+.go-back:hover {
+  color: var(--highlight-color);
 }
