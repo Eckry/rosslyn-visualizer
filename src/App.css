@@ -63,3 +63,18 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.appear {
+  animation: appear 1s ease-in-out both;
+}
+
+@keyframes appear {
+  from {
+    transform: translateY(5%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

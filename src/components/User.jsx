@@ -4,10 +4,18 @@ import "./styles/User.css";
 import consts from "../constants.json";
 import Week from "./Week";
 import Loading from "./Loading";
+import { useEffect, useRef } from "react";
 
 export default function User() {
   const { user } = useParams();
   const [data, isLoading] = useUser(user);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.classList.add("appear");
+    }
+  }, [data]);
 
   if (isLoading) {
     return (
@@ -29,7 +37,7 @@ export default function User() {
 
   return (
     <>
-      <main className="users-container">
+      <main ref={ref} className="users-container">
         <header>
           <img
             className="profile-picture"
@@ -60,11 +68,10 @@ export default function User() {
             })}
           </ul>
         )}
-
-        <Link className="go-back" to={"/"}>
-          Volver
-        </Link>
       </main>
+      <Link className="go-back" to={"/"}>
+        Volver
+      </Link>
     </>
   );
 }

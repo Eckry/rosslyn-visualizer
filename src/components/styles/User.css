@@ -45,6 +45,8 @@
   align-items: center;
   gap: 2rem;
   min-height: 500px;
+  transform: translateY(5%);
+  opacity: 0;
 }
 
 .profile-link {
