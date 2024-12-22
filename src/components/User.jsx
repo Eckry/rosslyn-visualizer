@@ -108,11 +108,11 @@ export default function User() {
               </h1>
             </div>
             <div>
-              <p>
+              <p className="user-info-text">
                 rating:{" "}
                 <span style={{ color: light }}>{data.profileInfo.rating}</span>
               </p>
-              <p>
+              <p className="user-info-text">
                 max rating:{" "}
                 <span style={{ color: maxLight }}>
                   {data.profileInfo.maxRating} ({data.profileInfo.maxRank})

@@ -53,6 +53,10 @@
   opacity: 0;
 }
 
+.user-info-text {
+  color: var(--gray);
+}
+
 .problems-container {
   width: 100%;
   padding: 1rem;
