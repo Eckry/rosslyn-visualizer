@@ -1,10 +1,5 @@
-.day-container {
-  padding: 1rem;
-}
-
 .day {
   border-radius: 7px;
-  margin: auto;
   font-size: 24px;
   color: var(--highlight-darker-color);
 }
@@ -15,6 +10,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   padding: 1rem;
 }
