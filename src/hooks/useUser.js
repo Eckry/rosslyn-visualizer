@@ -75,7 +75,7 @@ export default function useUser(user) {
           .then((res) => res.json())
           .then((userInfo) => {
             setData(() => {
-              return { ...dates, pfp: userInfo.result[0].titlePhoto };
+              return { ...dates, profileInfo: userInfo.result[0] };
             });
           })
           .catch((e) => {
