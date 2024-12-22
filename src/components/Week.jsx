@@ -15,7 +15,7 @@ export default function Week({ date, data }) {
     setIsOpen((prev) => !prev);
   }
 
-  const borderColor = dynamicStyleRating(data[date].max);
+  const {light: borderColor} = dynamicStyleRating(data[date].max);
 
   return (
     <>

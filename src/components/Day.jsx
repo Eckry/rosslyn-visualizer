@@ -7,7 +7,7 @@ export default function Day({ data, day, max }) {
     return acc < problem.rating ? problem.rating : acc;
   }, 0);
 
-  const dayNameColor = dynamicStyleRating(maxRating);
+  const {light: dayNameColor} = dynamicStyleRating(maxRating);
   
   return (
     <div key={day} className="day-container">

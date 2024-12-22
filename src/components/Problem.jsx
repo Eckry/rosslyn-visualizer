@@ -8,8 +8,8 @@ import { loadStarsPreset } from "@tsparticles/preset-stars";
 export default function Problem({ tags, name, rating, id, index, max }) {
   const [init, setInit] = useState(false);
 
-  const color = dynamicStyleRating(rating);
-  const shadow = { boxShadow: `0 0 30px -20px ${color}`, borderColor: color };
+  const { dark, light } = dynamicStyleRating(rating, "light");
+  const bg = { backgroundColor: dark, borderColor: light };
 
   const showParticles = max === rating;
 
@@ -28,7 +28,7 @@ export default function Problem({ tags, name, rating, id, index, max }) {
     particles: {
       number: { value: 10 },
       size: { value: 2 },
-      color: { value: color },
+      color: { value: light },
     },
   };
 
@@ -37,7 +37,7 @@ export default function Problem({ tags, name, rating, id, index, max }) {
       target="_blank"
       href={`https://codeforces.com/problemset/problem/${id}/${index}`}
       className="problem"
-      style={shadow}
+      style={bg}
       rel="noreferrer"
     >
       {showParticles && init && (
@@ -47,11 +47,11 @@ export default function Problem({ tags, name, rating, id, index, max }) {
           className="tsparticles2"
         />
       )}
-      <p style={{ color }} className="problem-title">
+      <p style={{ color: light }} className="problem-title">
         {name}
       </p>
-      <p style={{ color }}>{rating}</p>
-      <div style={{ color: color }} className="tags-show">
+      <p style={{ color: light }}>{rating}</p>
+      <div style={{ color: light }} className="tags-show">
         <IconTag />
         <div className="tags-container">
           {tags.map((tag, idx) => (
