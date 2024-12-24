@@ -3,10 +3,6 @@
   position: relative;
 }
 
-.accordion-content {
-  overflow: hidden;
-}
-
 .accordion-wrapper {
   display: grid;
   grid-template-rows: 0fr;
@@ -22,7 +18,7 @@
 }
 
 .arrow {
-  transition: 0.2s ease;
+  transition: 0.8s ease;
   display: grid;
   place-items: center;
 }
