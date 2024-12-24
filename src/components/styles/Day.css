@@ -1,7 +1,9 @@
 .day {
-  border-radius: 7px;
   font-size: 24px;
-  color: var(--highlight-darker-color);
+  border-left: 2px solid var(--highlight);
+  border-right: 2px solid var(--highlight);
+  background-color: var(--highlight-darker-color);
+  color: var(--highlight);
 }
 
 .problem-container {
@@ -10,5 +12,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
 }

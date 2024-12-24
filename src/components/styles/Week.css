@@ -31,14 +31,14 @@
   gap: 18px;
   align-items: center;
   scroll-margin-top: 60px;
-  margin-top: 10px;
   color: var(--gray);
   font-size: 24px;
   text-align: left;
   position: relative;
   padding: 0 12px;
   cursor: pointer;
-  border: 1px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
   h2 {
     font-size: 20px;
   }
