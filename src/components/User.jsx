@@ -63,7 +63,6 @@ export default function User() {
   function handleLeave() {
     cardRef.current.style.transform =
       "perspective(500px) scale(1) rotateX(0) rotateY(0)";
-    console.log("xd");
   }
 
   function handleDown() {
