@@ -1,12 +1,12 @@
 export const colors = {
-  newbie: { dark: "#80808008", light: "#808080" },
-  pupil: { dark: "#99d34208", light: "#99D342" },
-  apprentice: { dark: "#50A75008", light: "#50A750" },
-  specialist: { dark: "#03A89E08", light: "#03A89E" },
-  expert: { dark: "#0000FF08", light: "#0000FF" },
-  candidate: { dark: "#AA00AA08", light: "#AA00AA" },
-  master: { dark: "#FE951608", light: "#FE9516" },
-  grandmaster: { dark: "#FF000008", light: "#FF0000" },
+  newbie: { dark: "#80808010", light: "#808080" },
+  pupil: { dark: "#99d34210", light: "#99ff00" },
+  apprentice: { dark: "#50A75010", light: "#50A750" },
+  specialist: { dark: "#03A89E10", light: "#00ffee" },
+  expert: { dark: "#0000FF10", light: "#0000FF" },
+  candidate: { dark: "#AA00AA10", light: "#AA00AA" },
+  master: { dark: "#FE951610", light: "#FE9516" },
+  grandmaster: { dark: "#FF000010", light: "#FF0000" },
 };
 
 export const dynamicStyleRating = (rating) => {
