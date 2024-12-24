@@ -7,14 +7,9 @@
   gap: 2rem;
   width: 100%;
   cursor: pointer;
-  transition: 0.25s ease-in-out;
   position: relative;
   border-left: 2px solid;
   border-right: 2px solid;
-}
-
-.problem:hover  {
-  scale: 1.03;
 }
 
 .problem-title {
