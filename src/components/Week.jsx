@@ -3,6 +3,7 @@ import Day from "./Day";
 import { days } from "../constants.json";
 import { dynamicStyleRating } from "../utils";
 import { useState } from "react";
+import { IconArrowDown } from "../icons";
 
 export default function Week({ date, data }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,33 +16,27 @@ export default function Week({ date, data }) {
     setIsOpen((prev) => !prev);
   }
 
-  const {light: borderColor} = dynamicStyleRating(data[date].max);
+  const { light, dark } = dynamicStyleRating(data[date].max);
 
   return (
     <>
       <li className="week-container">
-        <h1 className="week-title" id={Number(date) + 1}>
-          <span
-            className="week-highlight"
-            style={{ color: isOpen ? "var(--highlight)" : "var(--gray)" }}
-          >
-            {Number(date) + 1}.
+        <h1
+          style={{ backgroundColor: dark, color: light, borderColor: light }}
+          onClick={handleClick}
+          className="week-title"
+          id={Number(date) + 1}
+        >
+          <span className="week-highlight" style={{ color: light }}>
+            {Number(date) + 1}
           </span>
-          <span className="week-line"></span>
-          <button
-            onClick={handleClick}
-            className="days-opener-button"
-            style={{
-              borderColor,
-              color: isOpen ? "var(--highlight)" : "var(--gray)",
-            }}
-          >
-            {totalSolved}
-          </button>
+          <h2>{totalSolved}</h2>
           <span
-            className="week-line2"
-            style={{ width: isOpen ? "100%" : "0%" }}
-          ></span>
+            className="arrow"
+            style={{ transform: isOpen ? "rotate(0deg)" : "rotate(180deg)" }}
+          >
+            <IconArrowDown />
+          </span>
         </h1>
         <div className={`accordion-wrapper ${isOpen ? "accordion-open" : ""}`}>
           <div className="accordion-content">
